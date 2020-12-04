@@ -1,10 +1,14 @@
 package com.example.callmemaybe;
 
-import com.google.firebase.database.DataSnapshot;
+
+import android.content.Context;
+import android.widget.Toast;
+
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.IgnoreExtraProperties;
+
 
 @IgnoreExtraProperties
 public class User {
@@ -14,18 +18,31 @@ public class User {
     public String password;
     public boolean estLecteur;
 
-    User user = new User("-KdbKcU2ptfYF2xKb5aO", "exemple@gmail.com", "aqw123");
-    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+    //IMPORTANT : bien laisser les attributs en public sinon Firebase peut pas y accéder
+
 
     public User() {
 
     }
 
-    public User(String identifiant, String email, String motdepasse) {
-        id = identifiant;
+    // IMPORTANT : bien laisser le constructeur vide pour Firebase
+
+    public User(String email, String motdepasse) {
+
         mail = email;
         password = motdepasse;
         estLecteur = true;
+
+    }
+
+    public void saveUserDB(Context context){
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+        databaseReference.child("user").push().setValue(this,new DatabaseReference.CompletionListener() {
+            @Override
+            public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
+                Toast.makeText(context, "User added.", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     public String getIdUser() {
