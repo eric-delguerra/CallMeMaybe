@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "283671533871",
+    "firebase_url": "https://jecrisdubonheur.firebaseio.com",
+    "project_id": "jecrisdubonheur",
+    "storage_bucket": "jecrisdubonheur.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283671533871:android:f708effffb9ed260c3a9da",
+        "android_client_info": {
+          "package_name": "com.example.callmemaybe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "283671533871-74ilsojhap48god014h97qd3cph7nehg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6PqfZ4rSZ60kKrM9wEtADIxGHch4PlrU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "283671533871-74ilsojhap48god014h97qd3cph7nehg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
