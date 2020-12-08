@@ -1,15 +1,9 @@
-<<<<<<< HEAD
-/*plugins {
-    id 'com.android.application'
-    apply plugin: 'com.google.gms.google-services'
-}*/
-apply plugin: 'com.android.application'
-=======
+
 
     apply plugin:  'com.android.application'
 
 
->>>>>>> sam_dev
+
 
 android {
     compileSdkVersion 30
@@ -50,8 +44,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
 
-<<<<<<< HEAD
-apply plugin: 'com.google.gms.google-services'
-=======
+
     apply plugin: 'com.google.gms.google-services'
->>>>>>> sam_dev
+
