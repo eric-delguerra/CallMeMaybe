@@ -7,19 +7,21 @@ public class Lettre {
     public String contenu;
     public int note;
     public String commentaire;
+    public boolean valid;
 
 
     public Lettre(){
 
     }
 
-    public Lettre(String identifiant, String title, String content){
+    public Lettre(String title, String content){
 
-        id=identifiant;
+
         titre=title;
         contenu=content;
         note=0;
         commentaire=null;
+        valid=true;
     }
 
     public String getIdLettre(){
