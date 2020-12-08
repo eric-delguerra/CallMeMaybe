@@ -15,7 +15,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         User numero1 = new User("tom@tom.tom", "tomtom");
-        numero1.saveUserDB(this);
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference yourRef = rootRef.child("user").push();
+        yourRef.setValue(numero1);
     }
 
     /* A appeler avec le bouton de la page Nouvelle lettre
