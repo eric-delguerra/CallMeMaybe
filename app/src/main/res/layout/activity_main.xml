@@ -57,13 +57,13 @@
         android:hint="Password"
         android:inputType="textPersonName"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox"
+        app:layout_constraintBottom_toTopOf="@+id/choixRole"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/choixRole"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="223dp"
@@ -75,13 +75,13 @@
         android:text="Ecrivain ?"
         android:textColor="#423D3D"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/button1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="22dp"
