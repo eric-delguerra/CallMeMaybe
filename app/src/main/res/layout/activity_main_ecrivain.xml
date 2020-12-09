@@ -8,6 +8,34 @@
     tools:context=".MainActivityEcrivain">
 
 
+    <EditText
+        android:id="@+id/editTextTextMultiLine3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:fontFamily="@font/arizonia"
+        android:gravity="start|top"
+        android:hint="j'écris ici"
+        android:inputType="textMultiLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/arizonia"
+        android:text="J'écris un titre"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titre" />
+
     <TextView
         android:id="@+id/titre"
         android:layout_width="0dp"
@@ -42,9 +70,9 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="19dp"
-        android:layout_marginLeft="19dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="116dp"
         android:fontFamily="@font/arizonia"
         android:text="J'écris un texte"
         android:textSize="18sp"
@@ -74,7 +102,7 @@
         android:layout_marginRight="21dp"
         android:layout_marginBottom="15dp"
         android:fontFamily="@font/arizonia"
-        android:text="J'envois "
+        android:text="J'envoie "
         android:textColor="#423D3D"
         app:backgroundTint="#F6EDF4"
         app:layout_constraintBottom_toTopOf="@+id/divider"
@@ -94,6 +122,7 @@
         app:layout_constraintTop_toBottomOf="@+id/divider" />
 
     <ListView
+        android:id="@+id/listView1"
         android:layout_width="409dp"
         android:layout_height="395dp"
         android:layout_marginStart="1dp"

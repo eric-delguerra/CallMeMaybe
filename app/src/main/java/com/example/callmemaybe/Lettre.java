@@ -24,7 +24,7 @@ public class Lettre {
         valid=true;
     }
 
-    public String getIdLettre(){
+    public String getId(){
         return this.id;
     }
 
@@ -44,7 +44,7 @@ public class Lettre {
         return this.commentaire;
     }
 
-    public void setIdLettre(String i){
+    public void setId(String i){
         this.id=i;
     }
 
