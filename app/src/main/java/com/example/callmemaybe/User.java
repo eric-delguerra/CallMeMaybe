@@ -37,7 +37,7 @@ public class User {
 
     public void saveUserDB(Context context){
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
-        databaseReference.child("user").push().setValue(this,new DatabaseReference.CompletionListener() {
+        databaseReference.child("User").push().setValue(this,new DatabaseReference.CompletionListener() {
             @Override
             public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
                 Toast.makeText(context, "User added.", Toast.LENGTH_SHORT).show();
@@ -45,7 +45,7 @@ public class User {
         });
     }
 
-    public String getIdUser() {
+    public String getId() {
         return this.id;
     }
 
@@ -61,7 +61,7 @@ public class User {
         return this.estLecteur;
     }
 
-    public void setIDUser(String i) {
+    public void setId(String i) {
         this.id = i;
     }
 
