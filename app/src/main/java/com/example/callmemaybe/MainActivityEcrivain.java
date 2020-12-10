@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -34,7 +35,9 @@ public class MainActivityEcrivain extends AppCompatActivity {
                 DatabaseReference yourRef = rootRef.child("Lettre").push();
                 yourRef.setValue(obj);
                 obj.setId(yourRef.getKey());
-
+                tonEdit.setText("");
+                tonEdit2.setText("");
+                Toast.makeText(MainActivityEcrivain.this, "Message envoyé", Toast.LENGTH_LONG).show();
             }
         });
 
