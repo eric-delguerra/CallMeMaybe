@@ -1,6 +1,7 @@
 package com.example.callmemaybe;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -26,6 +27,8 @@ public class MainActivityLecteur extends AppCompatActivity {
     ArrayAdapter adapter;
     String idActuelle;
     int indexGeneral;
+    Lettre[] touteLesLettres;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +52,7 @@ public class MainActivityLecteur extends AppCompatActivity {
                     int nbr = (int) ensembleDesLettres.getChildrenCount();
                     String[] listLettre = new String[nbr];
                     int index = nbr - 1;
-                    Lettre[] touteLesLettres = new Lettre[nbr];
+                    touteLesLettres = new Lettre[nbr];
                     String[] listId = new String[nbr];
 
 
@@ -60,13 +63,16 @@ public class MainActivityLecteur extends AppCompatActivity {
                         listId[index] = dataSnapshot.getKey();
                         listLettre[index] = lettre.titre;
                         touteLesLettres[index] = lettre;
-                        index--;
-                        System.out.println(lettre.commentaire);
+                        touteLesLettres[index].setId(dataSnapshot.getKey());
+
+                       // set les visuels
                         editText.setText(lettre.contenu);
                         rating.setRating((float) lettre.note);
                         idActuelle = dataSnapshot.getKey();
                         indexGeneral = index;
+                        index--;
                     }
+
 
                     adapter = new ArrayAdapter(MainActivityLecteur.this, android.R.layout.simple_list_item_1, android.R.id.text1, listLettre);
                     list2.setAdapter(adapter);
@@ -76,17 +82,7 @@ public class MainActivityLecteur extends AppCompatActivity {
                         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                             Toast.makeText(getApplicationContext(), touteLesLettres[i].contenu, Toast.LENGTH_LONG).show();
                             editText.setText(touteLesLettres[i].contenu);
-
-
-//                            touteLesLettres[indexGeneral].note = (int) rating.getRating();
-//                            DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
-//                            System.out.println(listId[i]);
-//                            DatabaseReference yourRef = rootRef.child("Lettre");
-//                            yourRef.child(idActuelle).setValue(touteLesLettres[indexGeneral]);
-//
-//                            rating.setRating((float) (touteLesLettres[i].note));
-//                            idActuelle = listId[i];
-//                            indexGeneral = i;
+                            indexGeneral = i;
 
                         }
                     });
@@ -98,6 +94,21 @@ public class MainActivityLecteur extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+
+               rating.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float note, boolean fromUser) {
+//                Log.d("Test note", "La note actuelle est : " + note);
+//                Log.d("Test IndexGeneral", "L'index général est : " + indexGeneral);
+//                Log.d("Test objet", "L'objet lettre est le bon : " + touteLesLettres[indexGeneral]);
+//                touteLesLettres[indexGeneral].setNote(note);
+//                Log.d("Test ListId + " , touteLesLettres[indexGeneral].getId());
+//                DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+//                DatabaseReference yourRef = rootRef.child("Lettre").child(touteLesLettres[indexGeneral].getId()).child("note");
+//                yourRef.setValue(note);
+                Toast.makeText(getApplicationContext(), "Votre note a bien été prise en compte", Toast.LENGTH_LONG).show();
             }
         });
 

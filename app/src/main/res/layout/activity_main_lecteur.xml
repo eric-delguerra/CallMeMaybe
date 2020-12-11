@@ -49,7 +49,8 @@
         android:layout_marginTop="28dp"
         android:fontFamily="@font/arizonia"
         android:text="Mon dernier message reçu"
-        android:textSize="18sp"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titre" />
 
@@ -83,7 +84,8 @@
         android:layout_marginTop="15dp"
         android:fontFamily="@font/arizonia"
         android:text="Tout mes messages"
-        android:textSize="18sp"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider" />
 
@@ -99,6 +101,8 @@
         android:fontFamily="@font/arizonia"
         android:text="Marquer comme lu"
         android:textColor="#423D3D"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/divider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine2" />

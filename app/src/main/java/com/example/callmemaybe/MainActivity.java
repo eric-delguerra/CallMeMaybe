@@ -46,11 +46,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        User numero1 = new User("tom@tom.tom", "tomtom");
-        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
-        DatabaseReference yourRef = rootRef.child("user").push();
-        yourRef.setValue(numero1);
-
 
     }
 

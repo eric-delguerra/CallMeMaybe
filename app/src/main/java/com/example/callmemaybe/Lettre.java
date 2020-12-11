@@ -5,7 +5,7 @@ public class Lettre {
     public String id;
     public String titre;
     public String contenu;
-    public int note;
+    public float note;
     public String commentaire;
     public boolean valid;
     public String idEcrivain;
@@ -21,14 +21,14 @@ public class Lettre {
 
         titre=title;
         contenu=content;
-        note=0;
+        note=0f;
         commentaire=null;
         valid=true;
         idEcrivain = null;
         idLecteur = null;
     }
 
-    public Lettre(String commentaire, String contenu, int note, String titre, Boolean valid ){
+    public Lettre(String commentaire, String contenu, float note, String titre, Boolean valid ){
 
 
        this.titre=titre;
@@ -52,7 +52,7 @@ public class Lettre {
         return this.contenu;
     }
 
-    public int getNote(){
+    public Float getNote(){
         return this.note;
     }
 
@@ -72,7 +72,7 @@ public class Lettre {
         this.contenu=c;
     }
 
-    public void setNote(int n){
+    public void setNote(float n){
         this.note=n;
     }
 
